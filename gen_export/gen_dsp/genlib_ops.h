@@ -145,16 +145,16 @@ inline t_sample safepow(t_sample base, t_sample exponent) {
 
 inline t_sample absdiff(t_sample a, t_sample b) { return fabs(a-b); }
 
-#ifndef WIN32
-inline t_sample exp2(t_sample v) { return pow(2., v); }
-
-inline t_sample trunc(t_sample v) {
-	t_sample epsilon = (v<0.0) * -2 * 1E-9 + 1E-9;
-	// copy to long so it gets truncated (probably cheaper than floor())
-	long val = v + epsilon;
-	return val;
-}
-#endif // WIN32
+//#ifndef WIN32
+//inline t_sample exp2(t_sample v) { return pow(2., v); }
+//
+//inline t_sample trunc(t_sample v) {
+//  t_sample epsilon = (v<0.0) * -2 * 1E-9 + 1E-9;
+//  // copy to long so it gets truncated (probably cheaper than floor())
+//  long val = v + epsilon;
+//  return val;
+//}
+//#endif // WIN32
 
 inline t_sample sign(t_sample v) {
 	return v > t_sample(0) ? t_sample(1) : v < t_sample(0) ? t_sample(-1) : t_sample(0);
