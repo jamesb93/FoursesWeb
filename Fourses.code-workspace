@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"algorithm": "cpp",
+			"json_builder.c": "cpp",
+			"json.c": "cpp"
+		}
+	}
+}
