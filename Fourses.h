@@ -4,9 +4,12 @@
 #if IPLUG_DSP
 #include "gen_export/gen_dsp.h"
 #endif
+#include "IControls.h"
 
 const int kNumPrograms = 1;
 const int kNumParams = 24;
+
+const int kCtrTagScope = 0;
 
 class Fourses : public IPlug
 {
@@ -18,7 +21,9 @@ public:
   void ProcessBlock(sample** inputs, sample** outputs, int nFrames) override;
   void OnReset() override;
   void OnParamChange(int paramIdx, EParamSource source, int offset) override;
+  void OnIdle() override;
 private:
   CommonState* mGenDSPState = nullptr;
+  IVScopeControl<2>::Sender mScopeSender {kCtrTagScope};
 #endif
 };

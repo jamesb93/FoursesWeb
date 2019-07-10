@@ -1,6 +1,5 @@
 #include "Fourses.h"
 #include "IPlug_include_in_plug_src.h"
-#include "IControls.h"
 
 Fourses::Fourses(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
@@ -18,13 +17,29 @@ Fourses::Fourses(IPlugInstanceInfo instanceInfo)
   };
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
-    pGraphics->AttachCornerResizer(EUIResizerMode::Scale, false);
-    pGraphics->AttachPanelBackground(COLOR_GRAY);
-    pGraphics->LoadFont("Roboto-Regular", ROBOTO_FN);
     const IRECT b = pGraphics->GetBounds();
-    //  IVMultiSliderControl(const IRECT& bounds, const char* label, const IVStyle& style, int loParamIdx, EDirection dir, float minTrackValue, float maxTrackValue, const char* trackNames = 0, ...)
 
-    pGraphics->AttachControl(new IVMultiSliderControl<kNumParams>(b.GetPadded(-20.f), "Fourses", DEFAULT_STYLE, 0, EDirection::Vertical, 0., 1.));
+    pGraphics->AttachCornerResizer(EUIResizerMode::Scale, false);
+    pGraphics->AttachPanelBackground(IPattern::CreateLinearGradient(b, EDirection::Horizontal, {{COLOR_RED, 0.}, {COLOR_ORANGE, 1.}}));
+    pGraphics->LoadFont("Amatic-Bold", FONT_FN);
+    
+    IVStyle style {
+      true, // Show label
+      true, // Show value
+      {
+        COLOR_TRANSPARENT, // Background
+        COLOR_WHITE, // Foreground
+        DEFAULT_PRCOLOR, // Pressed
+        COLOR_BLACK, // Frame
+      }, // Colors
+      IText(100, "Amatic-Bold"),
+    };
+    
+    auto area = b;
+
+    pGraphics->AttachControl(new IVLabelControl(area.ReduceFromTop(100.f), "Fourses", style));
+    pGraphics->AttachControl(new IVMultiSliderControl<kNumParams>(area.GetFromLeft(400.).GetPadded(-10.f), "", style, 0, EDirection::Vertical, 0., 1.));
+    pGraphics->AttachControl(new IVScopeControl<2>(area.GetFromRight(210.).GetPadded(-10.f), "", style.WithColor(kFG, COLOR_BLACK)), kCtrTagScope);
   };
 #endif
 }
@@ -37,9 +52,15 @@ Fourses::~Fourses()
 }
 
 #if IPLUG_DSP
+void Fourses::OnIdle()
+{
+  mScopeSender.TransmitData(*this);
+}
+
 void Fourses::ProcessBlock(sample** inputs, sample** outputs, int nFrames)
 {
   gen_dsp::perform(mGenDSPState, inputs, 2, outputs, 2 /*num_outputs*/, nFrames);
+  mScopeSender.ProcessBlock(outputs, nFrames);
 }
 
 void Fourses::OnReset()

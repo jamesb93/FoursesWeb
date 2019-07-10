@@ -22,8 +22,8 @@
 #define PLUG_DOES_MPE 0
 #define PLUG_DOES_STATE_CHUNKS 0
 #define PLUG_HAS_UI 1
-#define PLUG_WIDTH 300
-#define PLUG_HEIGHT 300
+#define PLUG_WIDTH 600
+#define PLUG_HEIGHT 400
 #define PLUG_FPS 60
 #define PLUG_SHARED_RESOURCES 0
 
@@ -49,4 +49,4 @@
 #define APP_RESIZABLE 0
 #define APP_SIGNAL_VECTOR_SIZE 64
 
-#define ROBOTO_FN "Roboto-Regular.ttf"
+#define FONT_FN "Amatic-Bold.ttf"
