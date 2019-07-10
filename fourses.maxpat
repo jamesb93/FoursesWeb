@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 107.0, 640.0, 480.0 ],
+		"rect" : [ 662.0, 464.0, 658.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -296,7 +296,7 @@
 								"box" : 								{
 									"code" : "out1  = in1 * 10 -5;\r\nout2  = in2 * 10 -5;\r\nout3  = in3 * 10 -5;\r\nout4  = in4 * 10 -5;\r\nout5  = in5 * 10 -5;\r\nout6  = in6 * 10 -5;\r\nout7  = in7 * 10 -5;\r\nout8  = in8 * 10 -5;\r\nout9  = in9 * 10 -5;\r\nout10 = in10 * 10 -5;\r\nout11 = in11 * 10 -5;\r\nout12 = in12 * 10 -5;\r\nout13 = in13 * 10 -5;\r\nout14 = in14 * 10 -5;\r\nout15 = in15 * 10 -5;\r\nout16 = in16 * 10 -5;\r\nout17 = pow(in17 * 100, 2);\r\nout18 = pow(in18 * 100, 2);\r\nout19 = pow(in19 * 100, 2);\r\nout20 = pow(in20 * 100, 2);\r\nout21 = pow(in21 * 100, 2);\r\nout22 = pow(in22 * 100, 2);\r\nout23 = pow(in23 * 100, 2);\r\nout24 = pow(in24 * 100, 2);",
 									"fontface" : 0,
-									"fontname" : "Lucida Console",
+									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
 									"maxclass" : "codebox",
@@ -722,7 +722,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 83.500015258789063, 353.0, 30.0, 22.0 ],
+													"patching_rect" : [ 83.500015258789062, 353.0, 30.0, 22.0 ],
 													"text" : "in 8"
 												}
 
@@ -837,7 +837,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 132.000015258789063, 184.0, 30.0, 22.0 ],
+													"patching_rect" : [ 132.000015258789062, 184.0, 30.0, 22.0 ],
 													"text" : "in 1"
 												}
 
@@ -1341,7 +1341,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 83.500015258789063, 353.0, 30.0, 22.0 ],
+													"patching_rect" : [ 83.500015258789062, 353.0, 30.0, 22.0 ],
 													"text" : "in 8"
 												}
 
@@ -1456,7 +1456,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 132.000015258789063, 184.0, 30.0, 22.0 ],
+													"patching_rect" : [ 132.000015258789062, 184.0, 30.0, 22.0 ],
 													"text" : "in 1"
 												}
 
@@ -1960,7 +1960,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 83.500015258789063, 353.0, 30.0, 22.0 ],
+													"patching_rect" : [ 83.500015258789062, 353.0, 30.0, 22.0 ],
 													"text" : "in 8"
 												}
 
@@ -2075,7 +2075,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 132.000015258789063, 184.0, 30.0, 22.0 ],
+													"patching_rect" : [ 132.000015258789062, 184.0, 30.0, 22.0 ],
 													"text" : "in 1"
 												}
 
@@ -2579,7 +2579,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 83.500015258789063, 353.0, 30.0, 22.0 ],
+													"patching_rect" : [ 83.500015258789062, 353.0, 30.0, 22.0 ],
 													"text" : "in 8"
 												}
 
@@ -2694,7 +2694,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 132.000015258789063, 184.0, 30.0, 22.0 ],
+													"patching_rect" : [ 132.000015258789062, 184.0, 30.0, 22.0 ],
 													"text" : "in 1"
 												}
 
@@ -3750,13 +3750,133 @@
 						"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 114.000000000000114, 302.66668701171875, 260.499999999999886, 22.0 ],
-					"text" : "gen~"
+					"patching_rect" : [ 147.000000000000114, 292.66668701171875, 164.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"exportfolder" : "Macintosh HD:/Users/oli/Dev/MyPlugins/BoneYard/Fourses/gen_export/",
+						"exportname" : "gen_dsp"
+					}
+,
+					"text" : "gen~ @exportname gen_dsp"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 324.0, 197.0, 68.0, 22.0 ],
+					"text" : "exportcode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 171.0, 50.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 219.0, 148.0, 163.0, 22.0 ],
+					"text" : "sprintf symout %sgen_export"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 171.0, 82.0, 32.0, 22.0 ],
+					"text" : "path"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 171.0, 109.0, 67.0, 22.0 ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+					"text" : "thispatcher"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 155.5, 197.0, 89.0, 22.0 ],
+					"text" : "exportfolder $1"
 				}
 
 			}
  ],
-		"lines" : [  ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-6", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+ ],
 		"dependency_cache" : [  ],
 		"autosave" : 0
 	}
