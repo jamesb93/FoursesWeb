@@ -10,6 +10,7 @@ const int kNumPrograms = 1;
 const int kNumParams = 24;
 
 const int kCtrTagScope = 0;
+const int kMsgTagRandomise = 0;
 
 class Fourses : public IPlug
 {
@@ -22,6 +23,7 @@ public:
   void OnReset() override;
   void OnParamChange(int paramIdx, EParamSource source, int offset) override;
   void OnIdle() override;
+  bool OnMessage(int messageTag, int controlTag, int dataSize, const void* pData) override;
 private:
   CommonState* mGenDSPState = nullptr;
   IVScopeControl<2>::Sender mScopeSender {kCtrTagScope};

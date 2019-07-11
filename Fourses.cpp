@@ -5,7 +5,6 @@ Fourses::Fourses(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
 {
   InitParamRange(0, kNumParams-1, 0, "p", 0., 0., 1., 0.001);
-  
 #if IPLUG_DSP
   mGenDSPState = (CommonState*) gen_dsp::create(DEFAULT_SAMPLE_RATE, DEFAULT_BLOCK_SIZE);
   gen_dsp::reset(mGenDSPState);
@@ -35,9 +34,10 @@ Fourses::Fourses(IPlugInstanceInfo instanceInfo)
       IText(100, "Amatic-Bold"),
     };
     
-    auto area = b;
+    auto area = b.GetReducedFromTop(100.);
 
-    pGraphics->AttachControl(new IVLabelControl(area.ReduceFromTop(100.f), "Fourses", style));
+    pGraphics->AttachControl(new IVLabelControl(b.GetFromTRHC(200, 100), "Fourses", style));
+    pGraphics->AttachControl(new IVButtonControl(b.GetFromTLHC(200, 100).GetPadded(-20), [](IControl* pCaller){ SplashClickActionFunc(pCaller); pCaller->GetDelegate()->SendArbitraryMsgFromUI(kMsgTagRandomise); }, "Randomise", style.WithLabelText(IText(50, "Amatic-Bold"))));
     pGraphics->AttachControl(new IVMultiSliderControl<kNumParams>(area.GetFromLeft(400.).GetPadded(-10.f), "", style, 0, EDirection::Vertical, 0., 1.));
     pGraphics->AttachControl(new IVScopeControl<2>(area.GetFromRight(210.).GetPadded(-10.f), "", style.WithColor(kFG, COLOR_BLACK)), kCtrTagScope);
   };
@@ -52,6 +52,18 @@ Fourses::~Fourses()
 }
 
 #if IPLUG_DSP
+bool Fourses::OnMessage(int messageTag, int controlTag, int dataSize, const void* pData)
+{
+  if(messageTag == kMsgTagRandomise) {
+    RandomiseParamValues();
+    OnParamReset(EParamSource::kUnknown);
+    SendCurrentParamValuesFromDelegate();
+    return true;
+  }
+  
+  return false;
+}
+
 void Fourses::OnIdle()
 {
   mScopeSender.TransmitData(*this);
